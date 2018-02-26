@@ -3,43 +3,17 @@ import {scaleBand, scaleLinear, scaleOrdinal} from 'd3-scale';
 import {max} from 'd3-array';
 import {stack} from 'd3-shape';
 import {computed} from '@ember/object';
-// import $ from 'jquery';
 import {select} from 'd3-selection';
 import {axisBottom, axisLeft} from 'd3-axis';
-
-// var x = d3.scaleBand()
-//   .rangeRound([0, width])
-//   .paddingInner(0.05)
-//   .align(0.1);
-//
-// var y = d3.scaleLinear()
-//   .rangeRound([height, 0]);
-//
-// var z = d3.scaleOrdinal()
-//   .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+import {run} from '@ember/runloop';
 
 export default Component.extend({
-  x: computed('data', (data) => {
-    scaleBand()
-      .rangeRound([0, width])
-      .paddingInner(0.05)
-      .align(0.1);
-  }),
-  // width: computed('svg', function () {
-  //   return +this.get('svg').attr("width") - this.get('margin.left') - this.get('margin.right');
-  // }),
-  // height: computed('svg', function () {
-  //   return +this.get('svg').attr("height") - this.get('margin.top') - this.get('margin.bottom');
-  // }),
-  // g: computed('svg', 'width', 'height', function () {
-  //
-  // }),
-
-  init() {
-    this._super(arguments);
-    // this.set('margin', {top: 20, right: 20, bottom: 30, left: 40});
+  didReceiveAttrs() {
+    this._super(...arguments);
+    select('svg').selectAll("*").remove();
   },
-  didInsertElement() {
+  didRender() {
+    this._super(...arguments);
     let data = this.get('data');
     let svg = select("svg"),
       margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -135,10 +109,7 @@ export default Component.extend({
       .text(function (d) {
         return d;
       });
-
-    // let svg =  select("svg");
-    // const margin = this.get('margin');
-    // svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    Ember.Logger.info('DidInsert finished')
   }
 
 });
