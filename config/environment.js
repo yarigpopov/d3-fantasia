@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    // 'ember-d3': {
+    //   only: ['d3-dsv','d3-fetch','d3-request',"d3-collection", "d3-dispatch", "xmlhttprequest",'d3-selection']
+    // },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
