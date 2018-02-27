@@ -35,7 +35,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'docs') {
-    ENV.rootURL = '/ipopov/d3-fantasia/';
+    ENV.rootURL = '/d3-fantasia/';
     ENV.locationType = 'hash';
   }
 

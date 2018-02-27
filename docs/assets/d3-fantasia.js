@@ -372,6 +372,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("d3-fantasia/app")["default"].create({"name":"d3-fantasia","version":"0.0.0+584e7288"});
+  require("d3-fantasia/app")["default"].create({"name":"d3-fantasia","version":"0.0.0+3cb129f2"});
 }
 //# sourceMappingURL=d3-fantasia.map
