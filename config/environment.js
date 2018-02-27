@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'd3-fantasia',
     environment,
@@ -32,6 +32,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+  }
+
+  if (environment === 'docs') {
+    ENV.rootURL = '/ipopov/d3-fantasia/';
+    ENV.locationType = 'hash';
   }
 
   if (environment === 'test') {
