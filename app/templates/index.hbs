@@ -1,1 +1,5 @@
 {{stack-chart data=model}}
+<h3>Data</h3>
+{{#each model as |data|}}
+    {{get data 'Under 5 Years'}}
+{{/each}}
